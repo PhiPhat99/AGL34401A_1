@@ -20,7 +20,7 @@ namespace Agilent_34401A_Multimeter_Test
         public delegate void AddDataDelegate(string Agilent34401A_Date);
         public AddDataDelegate myDelegate;
 
-        public AddDataMethod(string Data)
+        public void AddDataMethod(string Data)
         {
             textBox1.AppendText("Received data - " + Data + "\n");
         }
@@ -31,7 +31,7 @@ namespace Agilent_34401A_Multimeter_Test
                 meterRemoteStare = true;
                 button1.Text = "LOCAL";
                 button1.BackColor = Color.LightYellow;
-                if (!(meterRemoteStare.IsOpen)) 
+                if (!(serialPort1.IsOpen)) 
                 {
                     serialPort1.Open();
                     serialPort1.Write("SYST:REM\n");
@@ -60,7 +60,7 @@ namespace Agilent_34401A_Multimeter_Test
 
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
-            String Data(serialPort1.ReadLine());
+            String Data = serialPort1.ReadLine();
             textBox1.Invoke(this.myDelegate, new object[] { Data });
         }
     }
