@@ -38,6 +38,7 @@
             // 
             this.groupBox1.Controls.Add(this.DisconnectBtn);
             this.groupBox1.Controls.Add(this.ConnectBtn);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(30, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(307, 96);
@@ -47,22 +48,26 @@
             // 
             // ConnectBtn
             // 
+            this.ConnectBtn.BackColor = System.Drawing.Color.Lime;
+            this.ConnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ConnectBtn.Location = new System.Drawing.Point(17, 31);
             this.ConnectBtn.Name = "ConnectBtn";
             this.ConnectBtn.Size = new System.Drawing.Size(125, 35);
             this.ConnectBtn.TabIndex = 0;
             this.ConnectBtn.Text = "CONNECT";
-            this.ConnectBtn.UseVisualStyleBackColor = true;
+            this.ConnectBtn.UseVisualStyleBackColor = false;
             this.ConnectBtn.Click += new System.EventHandler(this.ConnectBtn_Click);
             // 
             // DisconnectBtn
             // 
+            this.DisconnectBtn.BackColor = System.Drawing.Color.Red;
+            this.DisconnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DisconnectBtn.Location = new System.Drawing.Point(161, 31);
             this.DisconnectBtn.Name = "DisconnectBtn";
             this.DisconnectBtn.Size = new System.Drawing.Size(125, 35);
             this.DisconnectBtn.TabIndex = 1;
             this.DisconnectBtn.Text = "DISCONNECT";
-            this.DisconnectBtn.UseVisualStyleBackColor = true;
+            this.DisconnectBtn.UseVisualStyleBackColor = false;
             this.DisconnectBtn.Click += new System.EventHandler(this.DisconnectBtn_Click);
             // 
             // Form1
