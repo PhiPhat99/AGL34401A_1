@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Ivi.Visa.Interop;
+
 namespace DMM34401A02
 {
     public partial class Form1 : Form
@@ -18,6 +20,7 @@ namespace DMM34401A02
         string DMM34401Aaddr = $"GPIB0::26::INSTR";
         public Form1()
         {
+
             InitializeComponent();
             Ivi.Visa.Interop.ResourceManager rm = new Ivi.Visa.Interop.ResourceManager();
             DMM = new Ivi.Visa.Interop.FormattedIO488();
@@ -26,13 +29,15 @@ namespace DMM34401A02
             mgr1 = new Ivi.Visa.Interop.ResourceManager();
         }
 
-        private void IOConnectBtn_Click(object sender, EventArgs e)
+        private void ConnectBtn_Click(object sender, EventArgs e)
         {
+
             Ivi.Visa.Interop.ResourceManager mgr1;
             mgr1 = new Ivi.Visa.Interop.ResourceManager();
 
             if (DMM != null)
             {
+
                 string DMM34401Aaddr = "GPIB::26::INSTR";
                 DMM.IO = (Ivi.Visa.Interop.IMessage)mgr1.Open(DMM34401Aaddr);
                 string command = "*IDN?";
@@ -44,12 +49,14 @@ namespace DMM34401A02
             }
             else
             {
+
                 MessageBox.Show("The device can not connect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void IODisconnectBtn_Click(object sender, EventArgs e)
+        private void DisconnectBtn_Click(object sender, EventArgs e)
         {
+
             DMM.IO.Close();
             MessageBox.Show("The device is disconnected.", "Disconnected", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
