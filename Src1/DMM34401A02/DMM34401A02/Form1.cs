@@ -57,5 +57,10 @@ namespace DMM34401A02
             DMM.IO.Close();
             MessageBox.Show("The device is disconnected.", "Disconnected", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void VDCMeasBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

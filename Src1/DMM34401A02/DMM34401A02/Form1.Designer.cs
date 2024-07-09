@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ConnectBtn = new System.Windows.Forms.Button();
             this.DisconnectBtn = new System.Windows.Forms.Button();
+            this.ConnectBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.VACMeasBtn = new System.Windows.Forms.Button();
+            this.VDCMeasBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.ResultTextbox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -52,18 +52,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DMM Connection";
             // 
-            // ConnectBtn
-            // 
-            this.ConnectBtn.BackColor = System.Drawing.Color.Lime;
-            this.ConnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConnectBtn.Location = new System.Drawing.Point(17, 31);
-            this.ConnectBtn.Name = "ConnectBtn";
-            this.ConnectBtn.Size = new System.Drawing.Size(125, 35);
-            this.ConnectBtn.TabIndex = 0;
-            this.ConnectBtn.Text = "CONNECT";
-            this.ConnectBtn.UseVisualStyleBackColor = false;
-            this.ConnectBtn.Click += new System.EventHandler(this.ConnectBtn_Click);
-            // 
             // DisconnectBtn
             // 
             this.DisconnectBtn.BackColor = System.Drawing.Color.Red;
@@ -76,10 +64,22 @@
             this.DisconnectBtn.UseVisualStyleBackColor = false;
             this.DisconnectBtn.Click += new System.EventHandler(this.DisconnectBtn_Click);
             // 
+            // ConnectBtn
+            // 
+            this.ConnectBtn.BackColor = System.Drawing.Color.Lime;
+            this.ConnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConnectBtn.Location = new System.Drawing.Point(17, 31);
+            this.ConnectBtn.Name = "ConnectBtn";
+            this.ConnectBtn.Size = new System.Drawing.Size(125, 35);
+            this.ConnectBtn.TabIndex = 0;
+            this.ConnectBtn.Text = "CONNECT";
+            this.ConnectBtn.UseVisualStyleBackColor = false;
+            this.ConnectBtn.Click += new System.EventHandler(this.ConnectBtn_Click);
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.VACMeasBtn);
+            this.groupBox2.Controls.Add(this.VDCMeasBtn);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox2.Location = new System.Drawing.Point(447, 29);
             this.groupBox2.Name = "groupBox2";
@@ -88,53 +88,54 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Measurement";
             // 
-            // button3
+            // VACMeasBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.Orange;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(161, 31);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 35);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "VAC MEASURE";
-            this.button3.UseVisualStyleBackColor = false;
+            this.VACMeasBtn.BackColor = System.Drawing.Color.Orange;
+            this.VACMeasBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VACMeasBtn.Location = new System.Drawing.Point(161, 31);
+            this.VACMeasBtn.Name = "VACMeasBtn";
+            this.VACMeasBtn.Size = new System.Drawing.Size(125, 35);
+            this.VACMeasBtn.TabIndex = 1;
+            this.VACMeasBtn.Text = "VAC MEASURE";
+            this.VACMeasBtn.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // VDCMeasBtn
             // 
-            this.button4.BackColor = System.Drawing.Color.SkyBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(17, 31);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 35);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "VDC MEASURE";
-            this.button4.UseVisualStyleBackColor = false;
+            this.VDCMeasBtn.BackColor = System.Drawing.Color.SkyBlue;
+            this.VDCMeasBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VDCMeasBtn.Location = new System.Drawing.Point(17, 31);
+            this.VDCMeasBtn.Name = "VDCMeasBtn";
+            this.VDCMeasBtn.Size = new System.Drawing.Size(125, 35);
+            this.VDCMeasBtn.TabIndex = 0;
+            this.VDCMeasBtn.Text = "VDC MEASURE";
+            this.VDCMeasBtn.UseVisualStyleBackColor = false;
+            this.VDCMeasBtn.Click += new System.EventHandler(this.VDCMeasBtn_Click);
             // 
-            // button1
+            // SaveBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(331, 396);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "SAVE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SaveBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Location = new System.Drawing.Point(331, 396);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(120, 30);
+            this.SaveBtn.TabIndex = 3;
+            this.SaveBtn.Text = "SAVE";
+            this.SaveBtn.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // ResultTextbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 145);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(708, 217);
-            this.textBox1.TabIndex = 4;
+            this.ResultTextbox.Location = new System.Drawing.Point(45, 145);
+            this.ResultTextbox.Multiline = true;
+            this.ResultTextbox.Name = "ResultTextbox";
+            this.ResultTextbox.Size = new System.Drawing.Size(708, 217);
+            this.ResultTextbox.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ResultTextbox);
+            this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -153,10 +154,10 @@
         private System.Windows.Forms.Button DisconnectBtn;
         private System.Windows.Forms.Button ConnectBtn;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button VACMeasBtn;
+        private System.Windows.Forms.Button VDCMeasBtn;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.TextBox ResultTextbox;
     }
 }
 
