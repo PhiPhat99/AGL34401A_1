@@ -114,9 +114,9 @@
             // SaveBtn
             // 
             this.SaveBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveBtn.Location = new System.Drawing.Point(331, 396);
+            this.SaveBtn.Location = new System.Drawing.Point(339, 383);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(120, 30);
+            this.SaveBtn.Size = new System.Drawing.Size(120, 55);
             this.SaveBtn.TabIndex = 3;
             this.SaveBtn.Text = "SAVE";
             this.SaveBtn.UseVisualStyleBackColor = true;

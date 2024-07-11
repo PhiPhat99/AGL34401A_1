@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Configuration;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,15 +53,29 @@ namespace DMM34401A02
             }
         }
 
+        private void VDCMeasBtn_Click(object sender, EventArgs e)
+        {
+            Ivi.Visa.Interop.ResourceManager mgr1;
+            mgr1 = new Ivi.Visa.Interop.ResourceManager();
+
+            try
+            {
+                DMM.IO = mgr1.Open("GPIB0::26::INSTR", AccessMode.NO_LOCK, 2000, "") as Ivi.Visa.Interop.IMessage;
+                DMM.WriteString("MEAS:VOLT:DC?");
+                string result = DMM.ReadString();
+                ResultTextbox.Text = result;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
         private void DisconnectBtn_Click(object sender, EventArgs e)
         {
             DMM.IO.Close();
             MessageBox.Show("The device is disconnected.", "Disconnected", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void VDCMeasBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
