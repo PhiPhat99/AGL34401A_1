@@ -74,8 +74,21 @@ namespace DMM34401A02
 
         private void DisconnectBtn_Click(object sender, EventArgs e)
         {
-            DMM.IO.Close();
-            MessageBox.Show("The device is disconnected.", "Disconnected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+
+                if (DMM != null)
+                {
+                    DMM.IO.Close();
+                    DMM = null;
+                    MessageBox.Show("The device is disconnected.", "Disconnected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
     }
 }
